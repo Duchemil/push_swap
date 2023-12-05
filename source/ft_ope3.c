@@ -1,43 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_libft.c                                         :+:      :+:    :+:   */
+/*   ft_ope3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 15:35:28 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/05 14:26:41 by lduchemi         ###   ########.fr       */
+/*   Created: 2023/12/05 13:51:04 by lduchemi          #+#    #+#             */
+/*   Updated: 2023/12/05 14:28:12 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_rrr(t_stack *stack)
 {
-	if (lst == NULL)
-		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
-}
-
-t_stack	*ft_lstnew(void *content)
-{
-	t_stack	*new;
-
-	new = (t_stack *) malloc(sizeof(t_stack));
-	if (!new)
-		return (NULL);
-	new->a->content = content;
-	new->a->next = NULL;
-	return (new);
-}
-
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	if (new != NULL)
-	{
-		new->next = *lst;
-		*lst = new;
-	}
+	ft_rra(stack, 1);
+	ft_rrb(stack, 1);
+	write(1, "rrr\n", 5);
 }

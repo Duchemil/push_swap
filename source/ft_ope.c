@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:23:39 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/04 17:01:00 by lduchemi         ###   ########.fr       */
+/*   Updated: 2023/12/05 14:28:04 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_sa(t_stack *stack, int i)
 {
 	void	*tmp;
-	t_list *a;
+	t_list	*a;
 
 	if (!stack->a->next || !stack->a->content)
 		return ;
@@ -25,13 +25,13 @@ void	ft_sa(t_stack *stack, int i)
 	a->content = tmp;
 	if (i == 0)
 		write(1, "sa\n", 4);
-	return (0);
+	return ;
 }
 
 void	ft_sb(t_stack *stack, int i)
 {
 	void	*tmp;
-	t_list *b;
+	t_list	*b;
 
 	if (!stack->b->next || !stack->b->content)
 		return ;

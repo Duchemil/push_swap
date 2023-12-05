@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:37:55 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/04 17:02:45 by lduchemi         ###   ########.fr       */
+/*   Updated: 2023/12/05 13:52:32 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,38 @@ void	ft_pb(t_stack *stack)
 	tmp->next = stack->b;
 	stack->b = tmp;
 	write(1, "pb\n", 4);
+}
+
+void	ft_rra(t_stack *stack, int i)
+{
+	t_list	*tmp;
+	t_list	*b;
+
+	tmp = stack->a;
+	b = stack->b;
+	if (tmp == NULL || tmp->next == NULL)
+		return ;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = NULL;
+	ft_lstadd_front(&(stack->b), tmp);
+	if (i == 0)
+		write(1, "rra\n", 5);
+}
+
+void	ft_rrb(t_stack *stack, int i)
+{
+	t_list	*tmp;
+	t_list	*a;
+
+	tmp = stack->b;
+	a = stack->a;
+	if (tmp == NULL || tmp->next == NULL)
+		return ;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = NULL;
+	ft_lstadd_front(&(stack->a), tmp);
+	if (i == 0)
+		write(1, "rrb\n", 5);
 }
