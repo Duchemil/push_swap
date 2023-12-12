@@ -6,7 +6,7 @@
 #    By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/12 13:53:08 by lduchemi          #+#    #+#              #
-#    Updated: 2023/12/12 13:55:25 by lduchemi         ###   ########.fr        #
+#    Updated: 2023/12/12 14:38:23 by lduchemi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,9 @@ SRCS = $(SRC_DIR)/ft_libft.c \
        $(SRC_DIR)/ft_main.c \
        $(SRC_DIR)/ft_ope2.c \
        $(SRC_DIR)/ft_ope3.c \
-       $(SRC_DIR)/ft_ope.c
-
-# Header file
+       $(SRC_DIR)/ft_ope.c \
+	   $(SRC_DIR)/ft_utils.c
 HEADER = $(SRC_DIR)/push_swap.h
-
-# Object files
 OBJS = $(SRCS:.c=.o)
 
 
@@ -32,14 +29,14 @@ $(NAME): $(OBJS)
 %.o: %.c $(HEADER)
 	$(CC) -c -o $@ $<
 
+all: $(NAME)
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(NAME)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-all: $(NAME)
 
 .PHONY: all clean fclean re

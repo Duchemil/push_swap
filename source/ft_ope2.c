@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:37:55 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/12 13:25:13 by lduchemi         ###   ########.fr       */
+/*   Updated: 2023/12/12 14:10:37 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,34 +48,34 @@ void	ft_pb(t_stack *stack)
 
 void	ft_rra(t_stack *stack, int i)
 {
-	t_list	*tmp;
-	t_list	*b;
+	t_list	*last;
+	t_list	*second_last;
 
-	tmp = stack->a;
-	b = stack->b;
-	if (tmp == NULL || tmp->next == NULL)
-		return ;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
-	tmp->next = NULL;
-	ft_lstadd_front(&(stack->b), tmp);
-	if (i == 0)
-		write(1, "rra\n", 5);
+	if (stack->a != NULL && stack->a->next != NULL)
+	{
+		last = ft_lstlast(stack->a);
+		second_last = ft_lst_secondlast(stack->a);
+		last->next = stack->a;
+		stack->a = last;
+		second_last->next = NULL;
+		if (i == 0)
+			write(1, "rra\n", 5);
+	}
 }
 
 void	ft_rrb(t_stack *stack, int i)
 {
-	t_list	*tmp;
-	t_list	*a;
+	t_list	*last;
+	t_list	*second_last;
 
-	tmp = stack->b;
-	a = stack->a;
-	if (tmp == NULL || tmp->next == NULL)
-		return ;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
-	tmp->next = NULL;
-	ft_lstadd_front(&(stack->a), tmp);
-	if (i == 0)
-		write(1, "rrb\n", 5);
+	if (stack->b != NULL && stack->b->next != NULL)
+	{
+		last = ft_lstlast(stack->b);
+		second_last = ft_lst_secondlast(stack->b);
+		last->next = stack->b;
+		stack->b = last;
+		second_last->next = NULL;
+		if (i == 0)
+			write(1, "rrb\n", 5);
+	}
 }

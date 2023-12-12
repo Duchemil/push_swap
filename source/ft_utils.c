@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_main.c                                          :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/12 13:46:41 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/12 15:18:09 by lduchemi         ###   ########.fr       */
+/*   Created: 2023/12/12 14:37:34 by lduchemi          #+#    #+#             */
+/*   Updated: 2023/12/12 14:55:34 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_list(t_list *lst)
+long int	ft_atoi(const char *str)
 {
-	while (lst != NULL)
-	{
-		printf("Contenu lst : %ld ", lst->content);
-		lst = lst->next;
-	}
-	printf("\n");
-}
+	long int	nb;
+	int			isneg;
+	int			i;
 
-int	main(int argc, char **argv)
-{
-	int		i;
-	t_stack	stack;
-
-	stack.a = NULL;
-	stack.b = NULL;
-	i = 1;
-	if (argc < 2)
-		return (0);
-	while (argv[i])
+	nb = 0;
+	isneg = 1;
+	i = 0;
+	if (str[i] == '+')
+		i++;
+	else if (str[i] == '-')
 	{
-		ft_lstadd_back(stack.a, ft_lstnew(ft_atoi(argv[i])));
-		printf("I : %d\n", i);
+		isneg *= -1;
 		i++;
 	}
-	print_list(stack.a);
-	return (0);
+	while ((str[i]) >= '0' && str[i] <= '9')
+	{
+		nb = (nb * 10) + (str[i] - '0');
+		i++;
+	}
+	return (nb * isneg);
 }
