@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:25:25 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/21 14:02:33 by lduchemi         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:07:57 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ typedef struct s_stack
 	t_list			*b;
 }					t_stack;
 
-t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lst_secondlast(t_list *lst);
 t_list				*ft_lstnew(long content);
 long int			ft_atoi(const char *str);
 void				free_list(t_list *list);

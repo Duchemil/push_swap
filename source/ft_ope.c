@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:23:39 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/12 15:09:53 by lduchemi         ###   ########.fr       */
+/*   Updated: 2023/12/21 16:46:10 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,9 @@ void	ft_ra(t_stack *stack, int i)
 	if (!stack->a || !stack->a->next)
 		return ;
 	top = stack->a;
-	bottom = ft_lstlast(stack->a);
+	bottom = top;
+	while (bottom->next != NULL)
+		bottom = bottom->next;
 	tmp = top->content;
 	top->content = bottom->content;
 	bottom->content = tmp;
@@ -71,7 +73,9 @@ void	ft_rb(t_stack *stack, int i)
 	if (!stack->b || !stack->b->next)
 		return ;
 	top = stack->b;
-	bottom = ft_lstlast(stack->b);
+	bottom = top;
+	while (bottom->next != NULL)
+		bottom = bottom->next;
 	tmp = top->content;
 	top->content = bottom->content;
 	bottom->content = tmp;

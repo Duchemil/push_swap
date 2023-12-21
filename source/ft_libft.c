@@ -6,31 +6,11 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:35:28 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/21 13:48:19 by lduchemi         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:07:49 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_list	*ft_lstlast(t_list *lst)
-{
-	t_list	*tmp;
-
-	tmp = lst;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
-	return (lst);
-}
-
-t_list	*ft_lst_secondlast(t_list *lst)
-{
-	t_list	*tmp;
-
-	tmp = lst;
-	while (tmp->next->next != NULL)
-		tmp = tmp->next;
-	return (tmp);
-}
 
 void	ft_lstadd_back(t_stack *stack, t_list *new)
 {

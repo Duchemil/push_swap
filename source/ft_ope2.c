@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:37:55 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/12 14:10:37 by lduchemi         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:06:24 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_pa(t_stack *stack)
 {
 	t_list	*tmp;
 
-	if (!stack->a)
+	if (!stack->b)
 		return ;
 	tmp = stack->b;
 	stack->b = tmp->next;
@@ -37,7 +37,7 @@ void	ft_pb(t_stack *stack)
 {
 	t_list	*tmp;
 
-	if (!stack->b)
+	if (!stack->a)
 		return ;
 	tmp = stack->a;
 	stack->a = tmp->next;
@@ -53,8 +53,11 @@ void	ft_rra(t_stack *stack, int i)
 
 	if (stack->a != NULL && stack->a->next != NULL)
 	{
-		last = ft_lstlast(stack->a);
-		second_last = ft_lst_secondlast(stack->a);
+		last = stack->a;
+		while (last->next->next != NULL)
+			last = last->next;
+		second_last = last;
+		last = last->next;
 		last->next = stack->a;
 		stack->a = last;
 		second_last->next = NULL;
@@ -70,8 +73,11 @@ void	ft_rrb(t_stack *stack, int i)
 
 	if (stack->b != NULL && stack->b->next != NULL)
 	{
-		last = ft_lstlast(stack->b);
-		second_last = ft_lst_secondlast(stack->b);
+		last = stack->b;
+		while (last->next->next != NULL)
+			last = last->next;
+		second_last = last;
+		last = last->next;
 		last->next = stack->b;
 		stack->b = last;
 		second_last->next = NULL;
