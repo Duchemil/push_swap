@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 13:46:41 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/12 15:18:09 by lduchemi         ###   ########.fr       */
+/*   Updated: 2023/12/21 14:03:52 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,23 @@ void	print_list(t_list *lst)
 {
 	while (lst != NULL)
 	{
-		printf("Contenu lst : %ld ", lst->content);
+		printf("Contenu lst : %ld\n", lst->content);
 		lst = lst->next;
 	}
-	printf("\n");
+}
+
+void	free_list(t_list *list)
+{
+	t_list	*current;
+	t_list	*next;
+
+	current = list;
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
 }
 
 int	main(int argc, char **argv)
@@ -34,10 +47,10 @@ int	main(int argc, char **argv)
 		return (0);
 	while (argv[i])
 	{
-		ft_lstadd_back(stack.a, ft_lstnew(ft_atoi(argv[i])));
-		printf("I : %d\n", i);
+		ft_lstadd_back(&stack, ft_lstnew(ft_atoi(argv[i])));
 		i++;
 	}
 	print_list(stack.a);
+	free_list(stack.a);
 	return (0);
 }

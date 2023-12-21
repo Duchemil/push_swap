@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:25:25 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/12 15:07:45 by lduchemi         ###   ########.fr       */
+/*   Updated: 2023/12/21 14:02:33 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lst_secondlast(t_list *lst);
 t_list				*ft_lstnew(long content);
 long int			ft_atoi(const char *str);
-void				ft_lstadd_back(t_list *lst, t_list *new);
+void				free_list(t_list *list);
+void				ft_lstadd_back(t_stack *stack, t_list *new);
 void				ft_lstadd_front(t_list *lst, t_list *new);
 void				ft_ss(t_stack *stack);
 void				ft_rr(t_stack *stack);

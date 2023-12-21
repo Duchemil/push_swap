@@ -6,12 +6,12 @@
 #    By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/12 13:53:08 by lduchemi          #+#    #+#              #
-#    Updated: 2023/12/12 14:38:23 by lduchemi         ###   ########.fr        #
+#    Updated: 2023/12/21 13:39:51 by lduchemi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-CC = gcc -Wall -Wextra -Werror
+CC = gcc -Wall -Wextra -Werror -g3
 SRC_DIR = ./source
 SRCS = $(SRC_DIR)/ft_libft.c \
        $(SRC_DIR)/ft_main.c \
