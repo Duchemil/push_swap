@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 14:37:34 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/12 14:55:34 by lduchemi         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:25:04 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,50 @@ long int	ft_atoi(const char *str)
 		i++;
 	}
 	return (nb * isneg);
+}
+
+int	ft_int(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if ((str[i]) >= '0' && str[i] <= '9')
+			i++;
+		else
+			return (write(2, "Error, an argument isn't an int\n", 33), 1);
+	}
+	return (0);
+}
+
+int	ft_big(const char *str)
+{
+	long	nb;
+
+	nb = ft_atoi(str);
+	if (nb > 2147483647 || nb < -2147483648)
+		return (write(2, "Error, an argument is not within int limits\n",
+				45), 1);
+	return (0);
+}
+
+int	ft_dupe(t_list *lst)
+{
+	t_list	*current;
+	t_list	*compare;
+
+	current = lst;
+	while (current != NULL)
+	{
+		compare = current->next;
+		while (compare != NULL)
+		{
+			if (current->content == compare->content)
+				return (write(2, "Error, duplicate in arguments\n", 31), 1);
+			compare = compare->next;
+		}
+		current = current->next;
+	}
+	return (0);
 }

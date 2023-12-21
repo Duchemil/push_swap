@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 13:46:41 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/21 16:53:00 by lduchemi         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:30:43 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,13 @@ int	main(int argc, char **argv)
 		return (0);
 	while (argv[i])
 	{
+		if (ft_big(argv[i]) == 1 || ft_int(argv[i]) == 1)
+			return (free_list(stack.a), 1);
 		ft_lstadd_back(&stack, ft_lstnew(ft_atoi(argv[i])));
 		i++;
+		if (ft_dupe(stack.a) == 1)
+			return (free_list(stack.a), 1);
 	}
-	ft_pb(&stack);
-	ft_pb(&stack);
-	ft_rrb(&stack, 0);
 	printf("Stack a : \n");
 	print_list(stack.a);
 	printf("Stack b : \n");

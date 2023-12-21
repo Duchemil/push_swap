@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:25:25 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/21 17:07:57 by lduchemi         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:23:13 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,7 @@ void				ft_sa(t_stack *stack, int i);
 void				ft_sb(t_stack *stack, int i);
 void				ft_ra(t_stack *stack, int i);
 void				ft_rb(t_stack *stack, int i);
+int					ft_int(const char *str);
+int					ft_big(const char *str);
+int					ft_dupe(t_list *lst);
 #endif
