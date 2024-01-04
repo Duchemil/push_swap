@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:37:55 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/21 17:06:24 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/04 18:50:53 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_rr(t_stack *stack)
 {
 	ft_ra(stack, 1);
 	ft_rb(stack, 1);
-	write(1, "rr\n", 4);
+	write(1, "rr\n", 3);
 	return ;
 }
 
@@ -30,7 +30,7 @@ void	ft_pa(t_stack *stack)
 	stack->b = tmp->next;
 	tmp->next = stack->a;
 	stack->a = tmp;
-	write(1, "pa\n", 4);
+	write(1, "pa\n", 3);
 }
 
 void	ft_pb(t_stack *stack)
@@ -43,7 +43,7 @@ void	ft_pb(t_stack *stack)
 	stack->a = tmp->next;
 	tmp->next = stack->b;
 	stack->b = tmp;
-	write(1, "pb\n", 4);
+	write(1, "pb\n", 3);
 }
 
 void	ft_rra(t_stack *stack, int i)
@@ -62,7 +62,7 @@ void	ft_rra(t_stack *stack, int i)
 		stack->a = last;
 		second_last->next = NULL;
 		if (i == 0)
-			write(1, "rra\n", 5);
+			write(1, "rra\n", 4);
 	}
 }
 
@@ -82,6 +82,6 @@ void	ft_rrb(t_stack *stack, int i)
 		stack->b = last;
 		second_last->next = NULL;
 		if (i == 0)
-			write(1, "rrb\n", 5);
+			write(1, "rrb\n", 4);
 	}
 }

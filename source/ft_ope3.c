@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:51:04 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/05 14:28:12 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/04 18:50:56 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@ void	ft_rrr(t_stack *stack)
 {
 	ft_rra(stack, 1);
 	ft_rrb(stack, 1);
-	write(1, "rrr\n", 5);
+	write(1, "rrr\n", 4);
 }
+
