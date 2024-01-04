@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:15:59 by lduchemi          #+#    #+#             */
-/*   Updated: 2024/01/04 14:21:48 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:16:17 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,53 @@ void	ft_radix(t_stack *stack)
 		while (stack->b)
 			ft_pa(stack);
 	}
+}
+
+void	ft_three(t_stack *stack)
+{
+	t_list	*list;
+
+	list = stack->a;
+	if (list->content > list->next->content
+		&& list->content < list->next->next->content)
+		ft_sa(stack, 0);
+	else if (list->content > list->next->content
+		&& list->next->content > list->next->next->content)
+		{
+			ft_sa(stack, 0);
+			ft_rra(stack, 0);
+		}
+	else if (list->content > list->next->content
+		&& list->content > list->next->next->content)
+		ft_ra(stack, 0);
+	else if (list->content < list->next->content
+		&& list->next->content > list->next->next->content)
+		{
+			ft_sa(stack, 0);
+			ft_ra(stack, 0);
+		}
+	else if (list->content < list->next->content
+		&& list->content > list->next->next->content)
+		ft_rra(stack, 0);
+}
+
+void	ft_four(t_stack *stack)
+{
+	ft_three(stack);
+	ft_pb(stack);
+	ft_three(stack);
+	ft_pb(stack);
+	ft_pa(stack);
+	ft_pa(stack);
+	ft_three(stack);
+}
+
+void	ft_five(t_stack *stack)
+{
+	ft_three(stack);
+	ft_pb(stack);
+	ft_pb(stack);
+	ft_three(stack);
+	ft_pa(stack);
+	ft_four(stack);
 }

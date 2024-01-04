@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:35:28 by lduchemi          #+#    #+#             */
-/*   Updated: 2024/01/04 15:17:41 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:24:40 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,20 @@ void	ft_lstadd_front(t_list *lst, t_list *new)
 		new->next = lst;
 		lst = new;
 	}
+}
+
+int	is_list_sorted(t_list *list)
+{
+	t_list	*head;
+
+	head = list;
+	while (head != NULL && head->next != NULL)
+	{
+		if (head->content > head->next->content)
+		{
+			return (0);
+		}
+		head = head->next;
+	}
+	return (1);
 }

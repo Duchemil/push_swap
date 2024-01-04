@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:25:25 by lduchemi          #+#    #+#             */
-/*   Updated: 2024/01/04 15:23:53 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:25:40 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define PUSH_SWAP_H
 
 # include <fcntl.h>
+# include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <limits.h>
 
 typedef struct s_list
 {
@@ -54,4 +54,9 @@ int					ft_int(const char *str);
 int					ft_big(const char *str);
 int					ft_dupe(t_list *lst);
 void				ft_radix(t_stack *stack);
+void				ft_three(t_stack *stack);
+void				ft_four(t_stack *stack);
+void				ft_five(t_stack *stack);
+void				ft_sort(t_stack *stack);
+int					is_list_sorted(t_list *list);
 #endif

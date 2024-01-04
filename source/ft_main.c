@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 13:46:41 by lduchemi          #+#    #+#             */
-/*   Updated: 2024/01/04 16:47:06 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:25:29 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,30 @@ int	main(int argc, char **argv)
 	}
 	update_index(stack.a);
 	update_index(stack.b);
-	ft_radix(&stack);
-	printf("Stack a : \n");
-	print_list(stack.a);
-	printf("Stack b : \n");
-	print_list(stack.b);
+	ft_sort(&stack);
 	free_list(stack.a);
 	free_list(stack.b);
 	return (0);
+}
+
+void	ft_sort(t_stack *stack)
+{
+	t_list	*a;
+
+	a = stack->a;
+	if (is_list_sorted(a))
+		return ;
+	if (ft_len_stack(stack->a) == 2)
+	{
+		if (stack->a->content > stack->a->next->content)
+			ft_ra(stack, 0);
+	}
+	else if (ft_len_stack(stack->a) == 3)
+		ft_three(stack);
+	else if (ft_len_stack(stack->a) == 4)
+		ft_four(stack);
+	else if (ft_len_stack(stack->a) == 5)
+		ft_five(stack);
+	else if (ft_len_stack(stack->a) > 5)
+		ft_radix(stack);
 }
