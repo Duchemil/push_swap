@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 13:46:41 by lduchemi          #+#    #+#             */
-/*   Updated: 2024/01/04 14:22:57 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:47:06 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,20 @@ void	update_index(t_list *list)
 {
 	int		i;
 	t_list	*current;
+	t_list	*temp;
 
-	i = 0;
 	current = list;
 	while (current != NULL)
 	{
+		i = 0;
+		temp = list;
+		while (temp != NULL)
+		{
+			if (temp->content < current->content)
+				i++;
+			temp = temp->next;
+		}
 		current->index = i;
-		i++;
 		current = current->next;
 	}
 }

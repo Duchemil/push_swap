@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:23:39 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/21 16:46:10 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:59:48 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,18 @@ void	ft_sb(t_stack *stack, int i)
 
 void	ft_ra(t_stack *stack, int i)
 {
-	t_list	*top;
 	t_list	*bottom;
-	long	tmp;
+	t_list	*tmp;
 
 	if (!stack->a || !stack->a->next)
 		return ;
-	top = stack->a;
-	bottom = top;
+	tmp = stack->a;
+	stack->a = stack->a->next;
+	tmp->next = NULL;
+	bottom = stack->a;
 	while (bottom->next != NULL)
 		bottom = bottom->next;
-	tmp = top->content;
-	top->content = bottom->content;
-	bottom->content = tmp;
+	bottom->next = tmp;
 	if (i == 0)
 		write(1, "ra\n", 4);
 	return ;
@@ -66,19 +65,18 @@ void	ft_ra(t_stack *stack, int i)
 
 void	ft_rb(t_stack *stack, int i)
 {
-	t_list	*top;
 	t_list	*bottom;
-	long	tmp;
+	t_list	*tmp;
 
 	if (!stack->b || !stack->b->next)
 		return ;
-	top = stack->b;
-	bottom = top;
+	tmp = stack->b;
+	stack->b = stack->b->next;
+	tmp->next = NULL;
+	bottom = stack->b;
 	while (bottom->next != NULL)
 		bottom = bottom->next;
-	tmp = top->content;
-	top->content = bottom->content;
-	bottom->content = tmp;
+	bottom->next = tmp;
 	if (i == 0)
 		write(1, "rb\n", 4);
 	return ;

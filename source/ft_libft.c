@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:35:28 by lduchemi          #+#    #+#             */
-/*   Updated: 2024/01/04 13:58:38 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/04 15:17:41 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_list	*ft_lstnew(long content)
 		return (NULL);
 	new->content = content;
 	new->next = NULL;
+	new->index = 0;
 	return (new);
 }
 
