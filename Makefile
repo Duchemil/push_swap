@@ -6,7 +6,7 @@
 #    By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/12 13:53:08 by lduchemi          #+#    #+#              #
-#    Updated: 2023/12/21 13:39:51 by lduchemi         ###   ########.fr        #
+#    Updated: 2024/01/04 14:24:03 by lduchemi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS = $(SRC_DIR)/ft_libft.c \
        $(SRC_DIR)/ft_ope2.c \
        $(SRC_DIR)/ft_ope3.c \
        $(SRC_DIR)/ft_ope.c \
-	   $(SRC_DIR)/ft_utils.c
+	   $(SRC_DIR)/ft_utils.c \
+	   $(SRC_DIR)/ft_algo.c
 HEADER = $(SRC_DIR)/push_swap.h
 OBJS = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 14:37:34 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/21 17:25:04 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:20:25 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,17 @@ long int	ft_atoi(const char *str)
 int	ft_int(const char *str)
 {
 	int	i;
+	int	neg;
 
 	i = 0;
+	neg = 0;
 	while (str[i])
 	{
+		if ((str[0]) == '-' && neg == 0)
+		{
+			neg = 1;
+			i++;
+		}
 		if ((str[i]) >= '0' && str[i] <= '9')
 			i++;
 		else
@@ -80,4 +87,19 @@ int	ft_dupe(t_list *lst)
 		current = current->next;
 	}
 	return (0);
+}
+
+int	ft_len_stack(t_list *lst)
+{
+	t_list	*current;
+	int		i;
+
+	current = lst;
+	i = 0;
+	while (current != NULL)
+	{
+		current = current->next;
+		i++;
+	}
+	return (i);
 }

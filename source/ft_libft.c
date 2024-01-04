@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:35:28 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/21 17:07:49 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:58:38 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_stack *stack, t_list *new)
 {
-	t_list *test;
+	t_list	*test;
 
 	if (stack->a == NULL)
 		stack->a = new;

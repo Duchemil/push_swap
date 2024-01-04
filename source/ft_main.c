@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 13:46:41 by lduchemi          #+#    #+#             */
-/*   Updated: 2023/12/21 17:30:43 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:22:57 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_list(t_list *lst)
 {
 	while (lst != NULL)
 	{
-		printf("Contenu lst : %ld\n", lst->content);
+		printf("Contenu lst : %ld, index : %d\n", lst->content, lst->index);
 		lst = lst->next;
 	}
 }
@@ -32,6 +32,21 @@ void	free_list(t_list *list)
 		next = current->next;
 		free(current);
 		current = next;
+	}
+}
+
+void	update_index(t_list *list)
+{
+	int		i;
+	t_list	*current;
+
+	i = 0;
+	current = list;
+	while (current != NULL)
+	{
+		current->index = i;
+		i++;
+		current = current->next;
 	}
 }
 
@@ -54,6 +69,9 @@ int	main(int argc, char **argv)
 		if (ft_dupe(stack.a) == 1)
 			return (free_list(stack.a), 1);
 	}
+	update_index(stack.a);
+	update_index(stack.b);
+	ft_radix(&stack);
 	printf("Stack a : \n");
 	print_list(stack.a);
 	printf("Stack b : \n");
