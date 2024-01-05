@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:15:59 by lduchemi          #+#    #+#             */
-/*   Updated: 2024/01/04 19:21:23 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:29:57 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,22 +50,22 @@ void	ft_three(t_stack *stack)
 	t = stack->a->content;
 	m = stack->a->next->content;
 	b = stack->a->next->next->content;
-	if (t > m && m < b && b > t)
-		ft_sa(stack, 0);
-	if (t > m && m > b && b < t)
-		{
-			ft_sa(stack, 0);
-			ft_rra(stack, 0);
-		}
-	if (t > m && m < b && b < t)
-		ft_ra(stack, 0);
-	if (t < m && m > b && b > t)
-		{
-			ft_sa(stack, 0);
-			ft_ra(stack, 0);
-		}
-	if (t < m && m > b && b < t)
+	if (t < m && t < b && m > b)
+	{
 		ft_rra(stack, 0);
+		ft_sa(stack, 0);
+	}
+	else if (t > m && t < b && m < b)
+		ft_sa(stack, 0);
+	else if (t < m && t > b && m > b)
+		ft_rra(stack, 0);
+	else if (t > m && t > b && m < b)
+		ft_ra(stack, 0);
+	else if (t > m && t > b && m > b)
+	{
+		ft_ra(stack, 0);
+		ft_sa(stack, 0);
+	}
 }
 
 void	ft_four(t_stack *stack)
@@ -81,11 +81,18 @@ void	ft_four(t_stack *stack)
 
 void	ft_five(t_stack *stack)
 {
-	ft_three(stack);
+	if (stack->a->next->next->next->next->index == 0)
+		ft_rra(stack, 0);
+	else
+	{
+		while (stack->a->index != 0)
+		ft_ra(stack, 0);
+	}
 	ft_pb(stack);
+	while (stack->a->index != 1)
+		ft_ra(stack, 0);
 	ft_pb(stack);
 	ft_three(stack);
 	ft_pa(stack);
 	ft_pa(stack);
-	ft_four(stack);
 }

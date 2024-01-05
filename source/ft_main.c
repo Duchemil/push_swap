@@ -6,20 +6,11 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 13:46:41 by lduchemi          #+#    #+#             */
-/*   Updated: 2024/01/04 19:37:13 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:32:45 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_list(t_list *lst)
-{
-	while (lst != NULL)
-	{
-		printf("Contenu lst : %ld, index : %d\n", lst->content, lst->index);
-		lst = lst->next;
-	}
-}
 
 void	free_list(t_list *list)
 {
@@ -79,10 +70,6 @@ int	main(int argc, char **argv)
 	update_index(stack.a);
 	update_index(stack.b);
 	ft_sort(&stack);
-	// printf("Stack a : \n");
-	// print_list(stack.a);
-	// printf("Stack b : \n");
-	// print_list(stack.b);
 	free_list(stack.a);
 	free_list(stack.b);
 	return (0);

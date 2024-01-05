@@ -6,7 +6,7 @@
 /*   By: lduchemi <lduchemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:25:25 by lduchemi          #+#    #+#             */
-/*   Updated: 2024/01/04 18:18:18 by lduchemi         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:33:47 by lduchemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ void				ft_four(t_stack *stack);
 void				ft_five(t_stack *stack);
 void				ft_sort(t_stack *stack);
 int					is_list_sorted(t_list *list);
-void				print_list(t_list *lst);
+void				update_index(t_list *list);
+
 #endif
